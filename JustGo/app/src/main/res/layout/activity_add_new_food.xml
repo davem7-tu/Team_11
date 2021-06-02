@@ -17,33 +17,34 @@
         android:textAlignment="center"
         android:text="@string/addFood_topic"
         android:layout_marginTop="80dp"
-        android:id="@+id/addFood_topic"/>
+        android:id="@+id/addActivity_topic"/>
 
-    <TextView android:layout_height="37dp"
+    <TextView
+        android:id="@+id/activityName_textView"
         android:layout_width="110dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="24sp"
-        android:text="@string/foodName_textView"
+        android:layout_height="37dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:id="@+id/foodName_textView"
-        app:layout_constraintTop_toBottomOf="@+id/addFood_topic"
-        android:layout_marginStart="32dp"/>
+        android:text="@string/Name_textView"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/addActivity_topic" />
 
     <EditText android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        app:layout_constraintTop_toTopOf="@+id/foodName_textView"
+        app:layout_constraintTop_toTopOf="@+id/activityName_textView"
         app:layout_constraintEnd_toEndOf="parent"
-        android:id="@+id/foodName_EditText"
-        app:layout_constraintStart_toEndOf="@+id/foodName_textView"
+        android:id="@+id/activityName_EditText"
+        app:layout_constraintStart_toEndOf="@+id/activityName_textView"
         android:inputType="textPersonName"
         android:ems="10"/>
 
     <EditText android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        app:layout_constraintTop_toTopOf="@+id/foodLocation_textView"
+        app:layout_constraintTop_toTopOf="@+id/activity_description_textView"
         app:layout_constraintEnd_toEndOf="parent"
-        android:id="@+id/foodLocation_EditText"
-        app:layout_constraintStart_toEndOf="@+id/foodLocation_textView"
+        android:id="@+id/activityDescription_EditText"
+        app:layout_constraintStart_toEndOf="@+id/activity_description_textView"
         android:inputType="textPersonName"
         android:ems="10"
         app:layout_constraintHorizontal_bias="0.513"/>
@@ -54,8 +55,8 @@
         android:textSize="24sp"
         android:text="@string/foodLocation_textView"
         android:layout_marginTop="24dp"
-        android:id="@+id/foodLocation_textView"
-        app:layout_constraintTop_toBottomOf="@+id/foodName_textView"
+        android:id="@+id/activity_description_textView"
+        app:layout_constraintTop_toBottomOf="@+id/activityName_textView"
         android:layout_marginStart="32dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -89,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"
         android:id="@+id/foodType_dorpdown"
-        app:layout_constraintTop_toBottomOf="@+id/foodLocation_EditText"
+        app:layout_constraintTop_toBottomOf="@+id/activityDescription_EditText"
         app:layout_constraintHorizontal_bias="0.852"/>
 
     <TextView android:layout_height="43dp"
@@ -99,7 +100,7 @@
         android:text="@string/foodType_textView"
         android:layout_marginTop="24dp"
         android:id="@+id/foodType_textView"
-        app:layout_constraintTop_toBottomOf="@+id/foodLocation_textView"
+        app:layout_constraintTop_toBottomOf="@+id/activity_description_textView"
         android:layout_marginStart="32dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

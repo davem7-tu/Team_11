@@ -7,9 +7,8 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.Spinner
-import com.example.justgo.Entitys.FoodType
-import com.example.justgo.Entitys.Trip
-import com.example.justgo.Entitys.TripType
+import com.example.justgo.Database.DatabaseHelper
+import com.example.justgo.Entitys.*
 import com.example.justgo.Logic.TripManager
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
@@ -38,23 +37,16 @@ class AddNewFoodActivity : AppCompatActivity() {
         save=findViewById(R.id.saveFood_floatActionButton)
         save.setOnClickListener {
             val name: EditText
-            name=findViewById(R.id.foodName_EditText)
+            name=findViewById(R.id.activityName_EditText)
             var location: EditText
-            location = findViewById(R.id.foodLocation_EditText)
+            location = findViewById(R.id.activityDescription_EditText)
 
             if(!(name.text.toString().equals("")) && !(location.text.toString().equals(""))) {
-
-                trip.addFood(name.text.toString(), location.text.toString(), food_dropdown.selectedItem as FoodType)
-
-                TripManager.replaceTrip(
-                    TripManager.getTripbyName(trip.nameofTrip).first(),
-                    trip
-                )
-
-                val intent = Intent(this, FoodsActivity::class.java)
-                intent.putExtra("trip", trip)
-                startActivity(intent)
-
+                var resultIntent = Intent()
+                var food = Food(name.text.toString(), location.text.toString(), food_dropdown.selectedItem as FoodType)
+                resultIntent.putExtra("foods", food)
+                setResult(Activity.RESULT_OK, resultIntent)
+                finish()
             }
         }
     }
